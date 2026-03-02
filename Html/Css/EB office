@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EB Office Login</title>
+<style>
+body { font-family: Arial; text-align:center; }
+.box { margin:20px; padding:20px; border:1px solid black; }
+</style>
+</head>
+<body>
+
+<h2>EB OFFICE LOGIN</h2>
+
+<div class="box">
+<label>Set EB Officer Number:</label><br>
+<input type="text" id="officer"><br><br>
+
+<label>Password:</label><br>
+<input type="password" id="password"><br><br>
+
+<button onclick="login()">Login</button>
+</div>
+
+<script>
+function login(){
+let officer=document.getElementById("officer").value;
+localStorage.setItem("officer",officer);
+window.location="dashboard.html";
+}
+</script>
+
+</body>
+</html>
