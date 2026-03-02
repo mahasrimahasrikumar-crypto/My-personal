@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>User Login</h2>
+
+    <input type="text" id="userid" placeholder="Enter User ID">
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <button onclick="login()">Login</button>
+
+    <div class="error" id="error"></div>
+</div>
+
+<script>
+    function login() {
+        var user = document.getElementById("userid").value;
+        var pass = document.getElementById("password").value;
+        var error = document.getElementById("error");
+
+        // Default username and password
+        var correctUser = "admin";
+        var correctPass = "1234";
+
+        if(user === "" || pass === "") {
+            error.innerHTML = "Please fill all fields!";
+        }
+        else if(user === correctUser && pass === correctPass) {
+            alert("Login Successful!");
+            window.location.href = "welcome.html";  // Redirect page
+        }
+        else {
+            error.innerHTML = "Invalid User ID or Password!";
+        }
+    }
+</script>
+
+</body>
+</html>
